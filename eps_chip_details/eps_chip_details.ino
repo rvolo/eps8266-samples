@@ -1,9 +1,7 @@
-/*  Get Chip ID
-    wemos.cc
+/*
+ * Prints the details from the chipset to the serial console
+ */
 
-
-*/
-const int led = 8;
 void setup() {
   Serial.begin(115200);
 
@@ -15,16 +13,12 @@ void setup() {
   Serial.printf("Boot version: %d\n" , ESP.getBootVersion());
 
   Serial.println("----------- Modes -----------");
-
   Serial.printf("Boot Mode: %d\n", ESP.getBootMode());
   Serial.printf("Flash Mode: %i\n",ESP.getFlashChipMode());
-
 
   Serial.println("----------- Hardware Info -----------");
   Serial.printf("CPU Mhz: %d\n", ESP.getCpuFreqMHz());
   Serial.printf("Flash Size: %d bytes  Real Size: %d bytes\n", ESP.getFlashChipSize(), ESP.getFlashChipRealSize());
-
-
 }
 
 void loop() {
